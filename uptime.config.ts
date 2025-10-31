@@ -4,7 +4,6 @@ const pageConfig = {
   // Links shown at the header of your status page, could set `highlight` to `true`
   links: [
     { link: 'https://github.vps7k7k.xyz', label: 'GitHub加速', highlight: true },
-
   ],
 }
 
@@ -12,7 +11,7 @@ const workerConfig = {
   // Write KV at most every 3 minutes unless the status changed
   kvWriteCooldownMinutes: 3,
   // Enable HTTP Basic auth for status page & API by uncommenting the line below, format `<USERNAME>:<PASSWORD>`
-  // passwordProtection: 'username:password',
+  passwordProtection: 'username:password',  // 取消注释并设置你的账号密码
   // Define all your monitors here
   monitors: [
     // Example HTTP Monitor 
