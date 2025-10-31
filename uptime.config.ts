@@ -25,7 +25,7 @@ const workerConfig = {
       target: 'https://github.vps7k7k.xyz',
       tooltip: 'My production server monitor',
       statusPageLink: 'https://github.vps7k7k.xyz',
-      timeout: 10000,
+      timeout: 20,
     },
   ],
   notification: {
