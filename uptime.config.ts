@@ -8,8 +8,9 @@ const pageConfig = {
 const workerConfig = {
   // Write KV at most every 3 minutes unless the status changed
   kvWriteCooldownMinutes: 3,
-  // Enable HTTP Basic auth for status page & API
-  passwordProtection: '3344:3344',
+  // 状态页面本身的认证（可选，如果需要保护状态页面就取消注释）
+  // passwordProtection: '3344:3344',
+  
   // Define all your monitors here
   monitors: [
     {
@@ -20,10 +21,10 @@ const workerConfig = {
       tooltip: 'GitHub镜像加速服务状态监控',
       statusPageLink: 'https://github.vps7k7k.xyz',
       timeout: 20,
-      // 如果你的github.vps7k7k.xyz服务也需要认证3344:3344，取消下面的注释
-      // headers: {
-      //   'Authorization': 'Basic ' + btoa('3344:3344')
-      // }
+      // 监控目标需要认证，添加headers
+      headers: {
+        'Authorization': 'Basic ' + btoa('3344:3344')
+      }
     },
   ],
   notification: {
