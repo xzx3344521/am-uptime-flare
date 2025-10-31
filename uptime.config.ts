@@ -1,7 +1,5 @@
 const pageConfig = {
-  // Title for your status page
   title: "数字套利 •「AM科技」's Status Page",
-  // Links shown at the header of your status page, could set `highlight` to `true`
   links: [
     { link: 'https://github.vps7k7k.xyz', label: 'GitHub加速', highlight: true },
   ],
@@ -10,21 +8,22 @@ const pageConfig = {
 const workerConfig = {
   // Write KV at most every 3 minutes unless the status changed
   kvWriteCooldownMinutes: 3,
-  // Enable HTTP Basic auth for status page & API by uncommenting the line below, format `<USERNAME>:<PASSWORD>`
-  passwordProtection: 'username:password',  // 取消注释并设置你的账号密码
+  // Enable HTTP Basic auth for status page & API
+  passwordProtection: '3344:3344',
   // Define all your monitors here
   monitors: [
-    // Example HTTP Monitor 
     {
       id: 'github',
-      name: 'github',
-      // `method` should be `TCP_PING` for tcp monitors
+      name: 'GitHub加速服务',
       method: 'GET',
-      // `target` should be `host:port` for tcp monitors
       target: 'https://github.vps7k7k.xyz',
-      tooltip: 'My production server monitor',
+      tooltip: 'GitHub镜像加速服务状态监控',
       statusPageLink: 'https://github.vps7k7k.xyz',
       timeout: 20,
+      // 如果你的github.vps7k7k.xyz服务也需要认证3344:3344，取消下面的注释
+      // headers: {
+      //   'Authorization': 'Basic ' + btoa('3344:3344')
+      // }
     },
   ],
   notification: {
